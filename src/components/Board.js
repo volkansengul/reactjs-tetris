@@ -13,17 +13,17 @@ export default class Board extends React.Component{
 
         this.props.matrix.forEach((row,y)=>{
             row.forEach((col,x)=>{
-               //this.ctx.fillStyle = (col===1)?'#ff0000':'#000';
-               this.ctx.fillRect(x,y,1,1);
+               this.ctx.fillStyle = (col===1)?'#ff0000':'#000';
+               this.ctx.fillRect(x,y,0.9,0.9);
             });
         });
 
         this.props.piece.forEach((row,y)=>{
             row.forEach((col,x)=>{
-                this.ctx.fillStyle = (col===1)?'#ff0000':'#000';
+                this.ctx.fillStyle = (col===1)?'#ff0000':'rgba(0,0,0,0)';
                 this.ctx.fillRect(
                     x+this.props.pos.x,
-                    y+this.props.pos.y,1,1);
+                    y+this.props.pos.y,0.9,0.9);
             });
         });
     }
@@ -33,7 +33,7 @@ export default class Board extends React.Component{
         if (this.canvas){
             this.ctx = this.canvas.getContext('2d');
             this.ctx.fillStyle = '#000';
-            this.ctx.scale(20,20);
+            this.ctx.scale(30,30);
             this.ctx.fillRect(0,0,10,20);
         }
         this.draw();
