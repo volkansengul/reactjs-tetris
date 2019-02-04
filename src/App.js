@@ -93,7 +93,6 @@ class App extends Component {
             });
         }
     }
-    41.43 / 43.02
 
     playerDrop = ()=>{
         this.dropCounter = 0;
